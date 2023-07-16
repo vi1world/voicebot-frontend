@@ -1,24 +1,16 @@
-# Use an official Node.js image
-FROM node:16
+# Use Node 18 as base
+FROM node:18 as build
 
-# Set the working directory
 WORKDIR /app
 
-# Copy package.json and yarn.lock files
-COPY package.json ./
-COPY yarn.lock ./
+COPY package*.json ./
 
-# Install dependencies
-RUN yarn --exact
+RUN yarn install
 
-# Copy the rest of your code into the Docker image
-COPY . ./
+COPY . .
 
-# Build the app
 RUN yarn build
 
-# Expose the port your app runs on in live mode
-EXPOSE 4173
+FROM nginx:1.17.8-alpine
 
-# Start the app in live mode
-CMD [ "yarn", "start" ]
+COPY --from=build /app/dist /usr/share/nginx/html
