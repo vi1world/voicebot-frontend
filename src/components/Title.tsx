@@ -30,7 +30,7 @@ function Title({ setMessages }: Props) {
 
   return (
     <div className="flex justify-between items-center w-full p-4 bg-gray-900 text-white font-bold shadow">
-      <div className="italic">Ava - lead generation assistant</div>
+      <div className="italic">Ava - lead generation assistant demo</div>
       <button
         onClick={resetConversation}
         className={
