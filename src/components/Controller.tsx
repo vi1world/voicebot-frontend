@@ -32,7 +32,7 @@ const Controller = () => {
 
         // send form data to api endpoint
         await axios
-          .post(`${process.env.BACKEND_URL}/post-audio`, formData, {
+          .post(`http://srv-captain--aivoice-backend/post-audio`, formData, {
             headers: {
               "Content-Type": "audio/mpeg",
             },
