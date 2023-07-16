@@ -2,8 +2,6 @@ import { useState } from "react";
 import Title from "./Title";
 import axios from "axios";
 import RecordMessage from "./RecordMessage";
-import dotenv from "dotenv";
-dotenv.config();
 
 const Controller = () => {
   const [isLoading, setIsLoading] = useState(false);
