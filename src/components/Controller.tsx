@@ -98,9 +98,12 @@ const Controller = () => {
           })}
 
           {messages.length == 0 && !isLoading && (
-            <div className="text-center font-bold mt-10">
-              Please click the microphone below to talk to me.
+             <>
+            <div className="text-center font-normal mt-10">
+              Curious about our AI assistant, Ava? <div className="text-center font-bold mt-10"> Simply click the microphone icon below and start speaking.</div>
             </div>
+               <div className="text-center font-normal mt-10"> Ava is eager to interact with you and answer any questions you have.</div>
+            <div className="text-center font-normal mt-10"> When you finish speaking, simply click the microphone icon again to stop recording.</div></>
           )}
 
           {isLoading && (
